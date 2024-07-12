@@ -11,19 +11,37 @@ import com.service.Arithmetic;
 
 public class AppTest 
 {
-//    private static Arithmetic ar;
-//    
-//    @BeforeAll
-//    public static void setUp() {
-//    	ar=new Arithmetic();
-//    }
-//   
+  
     @Test
     public void testWithPositives()
     {
     	Arithmetic ar=new Arithmetic();
         int excepected=30;
         int actual=ar.sum(15, 15);
+        assertEquals(excepected, actual);
+    }
+    @Test
+    public void testWithNegatives()
+    {
+    	Arithmetic ar=new Arithmetic();
+        int excepected=-39;
+        int actual=ar.sum(-20, -19);
+        assertEquals(excepected, actual);
+    }
+    @Test
+    public void testWithZeros()
+    {
+    	Arithmetic ar=new Arithmetic();
+        int excepected=0;
+        int actual=ar.sum(0, 0);
+        assertEquals(excepected, actual);
+    }
+    @Test
+    public void testWithMixedValues()
+    {
+    	Arithmetic ar=new Arithmetic();
+        int excepected=-5;
+        int actual=ar.sum(-15, 10);
         assertEquals(excepected, actual);
     }
 }
